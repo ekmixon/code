@@ -6,7 +6,7 @@ def spam():
     print('The begin of spam')
     pdb.set_trace()
     print('The end of spam')
-    print('The value of eggs: %s' % eggs)
+    print(f'The value of eggs: {eggs}')
 
 
 if __name__ == '__main__':

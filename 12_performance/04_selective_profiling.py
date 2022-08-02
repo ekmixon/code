@@ -11,7 +11,8 @@ def timer(function):
             return function(*args, **kwargs)
         finally:
             end = datetime.datetime.now()
-            print('%s: %s' % (function.__name__, end - start))
+            print(f'{function.__name__}: {end - start}')
+
     return _timer
 
 
@@ -39,10 +40,7 @@ def timed_fibonacci(n):
 
 
 def fibonacci(n):
-    if n < 2:
-        return n
-    else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+    return n if n < 2 else fibonacci(n - 1) + fibonacci(n - 2)
 
 
 if __name__ == '__main__':

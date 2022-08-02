@@ -15,7 +15,7 @@ if __name__ == '__main__':
         processes = int(sys.argv[-1])
     else:
         print('Please specify the number of processes')
-        print('Example: %s 4' % ' '.join(sys.argv))
+        print(f"Example: {' '.join(sys.argv)} 4")
         sys.exit(1)
 
     with multiprocessing.Pool(processes=processes) as pool:
@@ -23,5 +23,5 @@ if __name__ == '__main__':
         pool.map(busy_wait, [n for _ in range(8)])
 
     end = datetime.datetime.now()
-    print('The multithreaded loops took: %s' % (end - start))
+    print(f'The multithreaded loops took: {end - start}')
 

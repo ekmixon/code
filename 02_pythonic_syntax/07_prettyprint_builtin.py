@@ -19,10 +19,8 @@ def pp(*args, **kwargs):
 
     # Walk through the lines of the function
     for line in frame_info[3]:
-        # Search for the pp() function call with a fancy regexp
-        m = re.search(r'\bpp\s*\(\s*([^)]*)\s*\)', line)
-        if m:
-            print('# %s:' % m.group(1), end=' ')
+        if m := re.search(r'\bpp\s*\(\s*([^)]*)\s*\)', line):
+            print(f'# {m[1]}:', end=' ')
             break
 
     pprint.pprint(*args, **kwargs)

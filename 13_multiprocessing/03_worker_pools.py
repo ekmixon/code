@@ -11,11 +11,9 @@ if __name__ == '__main__':
     n = 10000000
     items = [n for _ in range(8)]
     with multiprocessing.Pool() as pool:
-        results = []
         start = time.time()
         print('Start processing...')
-        for _ in range(5):
-            results.append(pool.map_async(busy_wait, items))
+        results = [pool.map_async(busy_wait, items) for _ in range(5)]
         print('Still processing %.3f' % (time.time() - start))
         for result in results:
             result.wait()

@@ -6,15 +6,11 @@ def test_list():
 
 
 def test_list_comprehension():
-    return [i for i in range(10000)]
+    return list(range(10000))
 
 
 def test_append():
-    x = []
-    for i in range(10000):
-        x.append(i)
-
-    return x
+    return list(range(10000))
 
 
 def test_insert():

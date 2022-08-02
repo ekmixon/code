@@ -11,11 +11,7 @@ def o_one(items):
 
 
 def o_n(items):
-    total = 0
-    # Walks through all items once so O(n)
-    for item in items:
-        total += item
-    return total
+    return sum(items)
 
 
 def o_n_squared(items):

@@ -4,17 +4,11 @@ import functools
 
 @functools.lru_cache()
 def fibonacci_cached(n):
-    if n < 2:
-        return n
-    else:
-        return fibonacci_cached(n - 1) + fibonacci_cached(n - 2)
+    return n if n < 2 else fibonacci_cached(n - 1) + fibonacci_cached(n - 2)
 
 
 def fibonacci(n):
-    if n < 2:
-        return n
-    else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+    return n if n < 2 else fibonacci(n - 1) + fibonacci(n - 2)
 
 
 if __name__ == '__main__':

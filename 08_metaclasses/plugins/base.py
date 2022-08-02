@@ -36,8 +36,8 @@ class PluginsOnDemand(Plugins):
     @classmethod
     def get(cls, name):
         if name not in cls.plugins:
-            print('Loading plugins from plugins.%s' % name)
-            importlib.import_module('plugins.%s' % name)
+            print(f'Loading plugins from plugins.{name}')
+            importlib.import_module(f'plugins.{name}')
         return cls.plugins[name]
 
 

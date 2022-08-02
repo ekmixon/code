@@ -9,7 +9,7 @@ def test_output(xprocess, output_filename):
     output_filename = os.path.abspath(output_filename)
 
     def prepare(cwd):
-        return '', ['python3', name + '.py']
+        return '', ['python3', f'{name}.py']
 
     name, ext = os.path.splitext(output_filename)
     pid, log_file = xprocess.ensure(output_filename, prepare)

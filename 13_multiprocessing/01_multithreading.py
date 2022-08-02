@@ -13,7 +13,7 @@ if __name__ == '__main__':
     for _ in range(4):
         busy_wait(n)
     end = datetime.datetime.now()
-    print('The single threaded loops took: %s' % (end - start))
+    print(f'The single threaded loops took: {end - start}')
 
     start = datetime.datetime.now()
     threads = []
@@ -26,5 +26,5 @@ if __name__ == '__main__':
         thread.join()
 
     end = datetime.datetime.now()
-    print('The multithreaded loops took: %s' % (end - start))
+    print(f'The multithreaded loops took: {end - start}')
 

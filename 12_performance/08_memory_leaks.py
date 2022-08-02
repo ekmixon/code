@@ -28,13 +28,13 @@ if __name__ == '__main__':
 
     snapshot_a = tracemalloc.take_snapshot()
     # This code should be the memory leaking part
-    for i in range(n):
+    for _ in range(n):
         Spam()
 
     Spam.cache = {}
     snapshot_b = tracemalloc.take_snapshot()
     # And optionally more leaking code here
-    for i in range(n):
+    for _ in range(n):
         a = Eggs()
         b = Eggs()
         a.b = b
@@ -64,7 +64,7 @@ class Eggs(object):
         self.name = name
 
     def __repr__(self):
-        return '<%s: %s>' % (self.__class__.__name__, self.name)
+        return f'<{self.__class__.__name__}: {self.name}>'
 
 
 # Create the objects
@@ -117,10 +117,10 @@ class Eggs(object):
 
 if __name__ == '__main__':
     n = 200000
-    for i in range(n):
+    for _ in range(n):
         Spam()
 
-    for i in range(n):
+    for _ in range(n):
         a = Eggs()
         b = Eggs()
         a.b = b
@@ -151,7 +151,7 @@ class Eggs(object):
 
 if __name__ == '__main__':
     n = 200000
-    for i in range(n):
+    for _ in range(n):
         a = Eggs()
         b = Eggs()
         a.b = weakref.ref(b)

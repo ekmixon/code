@@ -7,8 +7,8 @@ else:
     @memory_profiler.profile
     def main():
         n = 100000
-        a = [i for i in range(n)]
-        b = [i for i in range(n)]
+        a = list(range(n))
+        b = list(range(n))
         c = list(range(n))
         d = list(range(n))
         e = dict.fromkeys(a, b)

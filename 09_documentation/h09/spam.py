@@ -7,7 +7,7 @@ class Spam(object):
         pass
 
     @classmethod
-    def decorated_method(self, arg):
+    def decorated_method(cls, arg):
         pass
 
     def _hidden_method(self):

@@ -16,10 +16,7 @@ def primes():
 
 
 if __name__ == '__main__':
-    total = 0
     n = 2000
-    for prime in itertools.islice(primes(), n):
-        total += prime
-
+    total = sum(itertools.islice(primes(), n))
     print('The sum of the first %d primes is %d' % (n, total))
 

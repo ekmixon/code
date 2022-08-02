@@ -22,4 +22,4 @@ if __name__ == '__main__':
         process.join()
 
     end = datetime.datetime.now()
-    print('The multiprocessed loops took: %s' % (end - start))
+    print(f'The multiprocessed loops took: {end - start}')

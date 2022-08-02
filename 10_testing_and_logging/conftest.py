@@ -7,6 +7,6 @@ def pytest_assertrepr_compare(config, op, left, right):
     if left_spam and right_spam and op == '==':
         return [
             'Comparing Spam instances:',
-            '    counts: %s != %s' % (left.count, right.count),
+            f'    counts: {left.count} != {right.count}',
         ]
 
